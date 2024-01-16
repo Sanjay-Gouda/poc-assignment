@@ -55,11 +55,8 @@ const ChartDemo = () => {
   }, []);
 
   return (
-    <div>
-      {/* <h2>Bar Chart Example</h2> */}
-      <div className="w-full">
-        <canvas ref={chartRef} />
-      </div>
+    <div className="w-full">
+      <canvas ref={chartRef} />
     </div>
   );
 };

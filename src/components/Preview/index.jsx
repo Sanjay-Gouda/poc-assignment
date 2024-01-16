@@ -1,11 +1,11 @@
-import React from "react";
-import BarChart from "../Charts/lineChart";
+/* eslint-disable react/prop-types */
+
 // import LineChart from "../Charts/barChart";
 import Table from "../Table";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import ChartDemo from "../Charts/lineChart";
 
-const Preview = ({ selectedOption }) => {
+const Preview = () => {
   const handleDrop = (results) => {
     console.log(results);
   };
@@ -15,7 +15,10 @@ const Preview = ({ selectedOption }) => {
         <Droppable droppableId="ROOT" type="group">
           {(provided) => (
             <div {...provided.dropp} ref={provided.innerRef}>
-              <div className="flex justify-center gap-5 flex-col items-center w-[900px] h-[400px] bg-white rounded-lg shadow-md p-4">
+              <div
+                className="flex justify-center gap-5 flex-col items-center w-[900px] h-[500px] bg-white rounded-lg shadow-md p-4 border-2 border-gray-50"
+                style={{ border: "2px solid gray" }}
+              >
                 <div className="w-full flex gap-4">
                   <Draggable draggableId="1" key="1" index="1">
                     {(provided) => (
@@ -29,23 +32,21 @@ const Preview = ({ selectedOption }) => {
                       </div>
                     )}
                   </Draggable>
-                  {selectedOption === "matric" && (
-                    <Draggable draggableId="2" key="2" index="2">
-                      {(provided) => (
-                        <div
-                          {...provided.dragHandleProps}
-                          {...provided.draggableProps}
-                          ref={provided.innerRef}
-                          className="w-1/2 rounded-lg shadow-md"
-                        >
-                          {/* <Table /> */}
-                          {/* <LineChart /> */}
-                          {/* <BarChart /> */}
-                          <ChartDemo />
-                        </div>
-                      )}
-                    </Draggable>
-                  )}
+                  <Draggable draggableId="2" key="2" index="2">
+                    {(provided) => (
+                      <div
+                        {...provided.dragHandleProps}
+                        {...provided.draggableProps}
+                        ref={provided.innerRef}
+                        className="w-1/2 rounded-lg shadow-md"
+                      >
+                        {/* <Table /> */}
+                        {/* <LineChart /> */}
+                        {/* <BarChart /> */}
+                        <ChartDemo />
+                      </div>
+                    )}
+                  </Draggable>
                 </div>
 
                 <Draggable draggableId="3" key="3" index="3">
