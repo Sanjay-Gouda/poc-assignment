@@ -55,7 +55,7 @@ const ChartDemo = () => {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full border-2 border-gray-200">
       <canvas ref={chartRef} />
     </div>
   );

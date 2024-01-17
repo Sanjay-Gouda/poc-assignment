@@ -12,12 +12,12 @@ export const MockSlide = [
   },
   {
     id: 2,
-    item: [<LineChart />, <ChartDemo />],
+    item: [<LineChart />, <Table />],
     notes: "Comments on Slide2",
   },
   {
     id: 3,
-    item: [<PieChart />, <Table />],
+    item: [<PieChart />],
     notes: "Comments on Slide3",
   },
 ];

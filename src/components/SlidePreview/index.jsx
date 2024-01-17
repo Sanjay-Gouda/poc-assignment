@@ -30,7 +30,10 @@ const SliderPreview = () => {
     showPreview,
     setAddNewSlide,
     addNewSlide,
+    selectedSlideName,
   } = useContext(dataContext);
+
+  console.log(selectedSlideName);
   const randomId = useRandomID();
   const [slideDetail, setSlideDetail] = useState("");
   const [selectedSlide, setSelecteSlide] = useState([]);
@@ -88,7 +91,9 @@ const SliderPreview = () => {
               <img src={Logo} className="w-full h-full object-cover" />
             </div>
             <div>
-              <h3 className="font-bold text-lg">Weekly Business Review</h3>
+              <h3 className="font-bold text-lg">
+                {selectedSlideName || "Weekly Business Report"}
+              </h3>
             </div>
           </div>
           <div className="w-[60%] flex justify-center">
@@ -128,7 +133,7 @@ const SliderPreview = () => {
                 {chart?.map((item, ind) => (
                   <div key={ind} className="flex  gap-4 w-1/2">
                     <div
-                      className={`overflow-hidden   items-center justify-center flex`}
+                      className={`overflow-hidden w-full  items-start justify-center flex`}
                     >
                       {item}
                     </div>
@@ -136,15 +141,9 @@ const SliderPreview = () => {
                 ))}
               </div>
               {comment !== "" && (
-                <Resizable
-                  defaultSize={{
-                    width: "100%",
-                  }}
-                >
-                  <div className="w-full h-12 p-3 rounded-lg shadow-md">
-                    <p>Note:{comment} </p>
-                  </div>
-                </Resizable>
+                <div className="w-auto h-12 p-3 rounded-lg shadow-md border-2 border-gray-200">
+                  <p>Note:{comment} </p>
+                </div>
               )}
             </div>
           ) : (

@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, GoogleAuthProvider } from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD2rDDIEeRmc_OZn_H1M8GhD970BK6lO9s",
@@ -14,18 +14,18 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 
-const provider = new GoogleAuthProvider();
+export const provider = new GoogleAuthProvider();
 
-export const signInWithGoogle = () => {
-  signInWithPopup(auth, provider)
-    .then((res) => {
-      console.log("response", res.user.accessToken);
-
-      const token = res.user.accessToken;
-
-      localStorage.setItem("auth-token", token);
-    })
-    .catch((err) => {
-      console.log("Error", err);
-    });
-};
+// export const signInWithGoogle = () => {
+//   signInWithPopup(auth, provider)
+//     .then((res) => {
+//       const token = res.user.accessToken;
+//       localStorage.setItem("auth-token", token);
+//       // if (token) {
+//       //   navigate("/select-slide");
+//       // }
+//     })
+//     .catch((err) => {
+//       console.log("Error", err);
+//     });
+// };

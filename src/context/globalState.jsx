@@ -9,6 +9,9 @@ const GlobalState = ({ children }) => {
   const [comment, setComment] = useState("");
   const [chart, setChart] = useState([]);
   const [showPreview, setShowPreview] = useState(false);
+
+  const [selectedSlideName, setSelectedSlideName] = useState("");
+
   return (
     <dataContext.Provider
       value={{
@@ -22,6 +25,8 @@ const GlobalState = ({ children }) => {
         setChart,
         showPreview,
         setShowPreview,
+        selectedSlideName,
+        setSelectedSlideName,
       }}
     >
       {children}

@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
-const Cards = ({ title, image }) => {
+const Cards = ({ title, image, selected, handleSelectFile, id }) => {
   return (
     <>
-      <div className="w-[178px] cursor-pointer bg-white rounded-md overflow-hidden shadow-md hover:outline outline-blue-500 ">
+      <div
+        onClick={() => handleSelectFile(id)}
+        className={`w-[178px] cursor-pointer bg-white rounded-md overflow-hidden shadow-md hover:outline outline-blue-500 ${
+          selected ? "border-4 border-blue-400 hover:outline-none" : ""
+        }`}
+      >
         <img
           src={image}
           alt="Card Image"

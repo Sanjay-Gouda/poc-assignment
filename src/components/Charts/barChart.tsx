@@ -116,7 +116,7 @@ const LineChart = () => {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full border-2 border-gray-200">
       <Line data={casesData} options={options} />
     </div>
     // <div className="w-full ">
