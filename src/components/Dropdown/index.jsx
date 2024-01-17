@@ -1,18 +1,14 @@
+/* eslint-disable react/prop-types */
 // import { SiBaremetrics } from "react-icons/si";
-import { FaRuler } from "react-icons/fa";
 
-const Dropdown = ({ openModal }) => {
-  //   const [open, setOpen] = useState(false);
-
-  //   const handleOpen = () => {
-  //     setOpen(!open);
-  //   };
-
+const Dropdown = ({ openModal, openTextModal }) => {
   const handleChange = (e) => {
     console.log(e.target.value == "matric");
 
     if (e.target.value == "matric") {
       openModal();
+    } else if (e.target.value == "text") {
+      openTextModal();
     }
   };
 

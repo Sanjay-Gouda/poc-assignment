@@ -22,7 +22,7 @@ const PieChart = () => {
   };
   return (
     <div className="w-1/2">
-      <Pie data={data} />;
+      <Pie data={data} />
     </div>
   );
 };

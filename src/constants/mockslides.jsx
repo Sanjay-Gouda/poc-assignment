@@ -20,9 +20,4 @@ export const MockSlide = [
     item: [<PieChart />, <Table />],
     notes: "Comments on Slide3",
   },
-  {
-    id: 4,
-    item: [],
-    notes: "",
-  },
 ];

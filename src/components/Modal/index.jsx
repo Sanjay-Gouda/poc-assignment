@@ -1,5 +1,32 @@
+/* eslint-disable react/jsx-key */
+import { useContext, useEffect, useState } from "react";
+import { dataContext } from "../../context/globalState";
+import LineChart from "../Charts/barChart";
+import ChartDemo from "../Charts/lineChart";
+import PieChart from "../Charts/pieChart";
+
 /* eslint-disable react/prop-types */
 const StyledModal = ({ open, onClose }) => {
+  const { chart, setChart } = useContext(dataContext);
+  const [chartName, setChartName] = useState("");
+
+  const handleChartName = (name) => {
+    console.log(name);
+    setChartName(name);
+  };
+
+  const addCharts = () => {
+    onClose();
+
+    if (chartName == "line-chart") {
+      setChart((prev) => [...prev, <LineChart />]);
+    } else if (chartName == "bar-chart") {
+      setChart((prev) => [...prev, <ChartDemo />]);
+    } else {
+      setChart((prev) => [...prev, <PieChart />]);
+    }
+  };
+
   return (
     <>
       <div
@@ -41,7 +68,7 @@ const StyledModal = ({ open, onClose }) => {
             <div className="p-4 md:p-5">
               <p className="text-gray-500 mb-4">Select your Chart:</p>
               <ul className="space-y-4 mb-4">
-                <li>
+                <li onClick={() => handleChartName("line-chart")}>
                   <input
                     type="radio"
                     id="job-1"
@@ -76,7 +103,7 @@ const StyledModal = ({ open, onClose }) => {
                     </svg>
                   </label>
                 </li>
-                <li>
+                <li onClick={() => handleChartName("bar-chart")}>
                   <input
                     type="radio"
                     id="job-2"
@@ -110,7 +137,7 @@ const StyledModal = ({ open, onClose }) => {
                     </svg>
                   </label>
                 </li>
-                <li>
+                <li onClick={() => handleChartName("pie-chart")}>
                   <input
                     type="radio"
                     id="job-3"
@@ -145,8 +172,11 @@ const StyledModal = ({ open, onClose }) => {
                   </label>
                 </li>
               </ul>
-              <button className="text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center ">
-                Next step
+              <button
+                onClick={addCharts}
+                className="text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
+              >
+                Add Chart
               </button>
             </div>
           </div>

@@ -2,12 +2,13 @@ import { useContext } from "react";
 import { dataContext } from "../../context/globalState";
 
 /* eslint-disable react/prop-types */
-const Slides = ({ item, id }) => {
-  const { setSlideId, slideId } = useContext(dataContext);
+const Slides = ({ item, id, showPreview }) => {
+  const { setSlideId, slideId, setShowPreview } = useContext(dataContext);
 
   const handleClick = (id) => {
     // console.log(id);
     setSlideId(id);
+    setShowPreview(false);
   };
 
   // border-2 border-yellow-400

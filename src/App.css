@@ -48,12 +48,20 @@ canvas{
   height: 100% !important;
 }
 
-/* @layer components{
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    background-color: #ebebeb;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
 
-  .btn-primary {
-    @apply bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded;
-  }
-  
-} */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #d6d0d0; 
+}
 
 
