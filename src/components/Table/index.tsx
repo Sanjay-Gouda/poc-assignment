@@ -3,7 +3,7 @@ import React from "react";
 const Table = () => {
   return (
     <>
-      <div className="w-1/2 flex border-2 border-gray-200">
+      <div className="w-full flex border-2 border-gray-200">
         <table className="w-full text-sm text-left rtl:text-right text-gray-500 ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-100 ">
             <tr>

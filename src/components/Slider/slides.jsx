@@ -17,8 +17,8 @@ const Slides = ({ item, id, showPreview }) => {
       <div
         onClick={() => handleClick(id)}
         className={`w-64 h-40 bg-white flex ${
-          slideId === id ? "border-2 border-yellow-400" : ""
-        }   flex-wrap cursor-pointer rounded-lg overflow-hidden shadow-md p-4 hover:outline outline-yellow-400`}
+          slideId === id ? "border-2 border-blue-400 hover:outline-none" : ""
+        }   flex-wrap cursor-pointer rounded-lg overflow-hidden shadow-md p-4 hover:outline outline-blue-400`}
       >
         {item.map((dt, ind) => (
           <div

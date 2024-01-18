@@ -10,7 +10,7 @@ const PreviewContainer = ({ item, notes, id }) => {
           {item}
         </div>
 
-        <div className={`w-auto h-12 p-3 rounded-lg  border-2 border-gray-200`}>
+        <div className={`w-auto  p-3 rounded-lg  border-2 border-gray-200`}>
           <p>Note:{notes} </p>
         </div>
         {/* <div className="w-full h-12 p-3 rounded-lg shadow-md">

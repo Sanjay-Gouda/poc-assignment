@@ -16,6 +16,7 @@ const TextModal = ({ open, onClose }) => {
 
   const addComment = () => {
     setComment(notes);
+    // setNotes("");
     onClose();
   };
 
@@ -27,14 +28,12 @@ const TextModal = ({ open, onClose }) => {
         aria-hidden="true"
         className={`${
           open ? "block" : "hidden"
-        } overflow-y-auto flex overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+        } overflow-y-auto flex overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center  w-full md:inset-0 h-[calc(100%-1rem)] max-h-full`}
       >
         <div className="relative p-4 w-full max-w-md max-h-full">
-          <div className="relative bg-white rounded-lg shadow ">
+          <div className="relative border-2 border-gray-200 bg-white rounded-lg shadow ">
             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t ">
-              <h3 className="text-lg font-semibold text-gray-900 ">
-                Add Comment
-              </h3>
+              <h3 className="text-lg font-semibold text-gray-900 ">Add Text</h3>
               <button
                 type="button"
                 onClick={onClose}
@@ -68,7 +67,7 @@ const TextModal = ({ open, onClose }) => {
                 id="message"
                 rows="4"
                 onChange={handleChange}
-                className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+                className="block p-2.5 w-full text-[20px] text-black bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                 placeholder="Write your thoughts here..."
               ></textarea>
 

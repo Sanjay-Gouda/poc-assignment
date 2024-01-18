@@ -4,6 +4,8 @@ import { dataContext } from "../../context/globalState";
 import LineChart from "../Charts/barChart";
 import ChartDemo from "../Charts/lineChart";
 import PieChart from "../Charts/pieChart";
+import BubbleChart from "../Charts/bubbleChart";
+import Table from "../Table";
 
 /* eslint-disable react/prop-types */
 const StyledModal = ({ open, onClose }) => {
@@ -11,7 +13,6 @@ const StyledModal = ({ open, onClose }) => {
   const [chartName, setChartName] = useState("");
 
   const handleChartName = (name) => {
-    console.log(name);
     setChartName(name);
   };
 
@@ -22,8 +23,12 @@ const StyledModal = ({ open, onClose }) => {
       setChart((prev) => [...prev, <LineChart />]);
     } else if (chartName == "bar-chart") {
       setChart((prev) => [...prev, <ChartDemo />]);
-    } else {
+    } else if (chartName == "pie-chart") {
       setChart((prev) => [...prev, <PieChart />]);
+    } else if (chartName == "bubble-chart") {
+      setChart((prev) => [...prev, <BubbleChart />]);
+    } else {
+      setChart((prev) => [...prev, <Table />]);
     }
   };
 
@@ -171,12 +176,80 @@ const StyledModal = ({ open, onClose }) => {
                     </svg>
                   </label>
                 </li>
+                <li onClick={() => handleChartName("bubble-chart")}>
+                  <input
+                    type="radio"
+                    id="job-4"
+                    name="job"
+                    value="job-4"
+                    className="hidden peer"
+                  />
+                  <label
+                    htmlFor="job-4"
+                    className="inline-flex items-center justify-between w-full p-5 text-gray-900 bg-white border border-gray-200 rounded-lg cursor-pointer  peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-900 hover:bg-gray-100 "
+                  >
+                    <div className="block">
+                      <div className="w-full text-lg font-semibold">
+                        Bubble Chart
+                      </div>
+                    </div>
+                    <svg
+                      className="w-4 h-4 ms-3 rtl:rotate-180 text-gray-500 "
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                      />
+                    </svg>
+                  </label>
+                </li>
+                <li onClick={() => handleChartName("table")}>
+                  <input
+                    type="radio"
+                    id="job-5"
+                    name="job"
+                    value="job-5"
+                    className="hidden peer"
+                  />
+                  <label
+                    htmlFor="job-5"
+                    className="inline-flex items-center justify-between w-full p-5 text-gray-900 bg-white border border-gray-200 rounded-lg cursor-pointer  peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-900 hover:bg-gray-100 "
+                  >
+                    <div className="block">
+                      <div className="w-full text-lg font-semibold">
+                        Pie Chart
+                      </div>
+                    </div>
+                    <svg
+                      className="w-4 h-4 ms-3 rtl:rotate-180 text-gray-500 "
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 10"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M1 5h12m0 0L9 1m4 4L9 9"
+                      />
+                    </svg>
+                  </label>
+                </li>
               </ul>
               <button
                 onClick={addCharts}
                 className="text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
               >
-                Add Chart
+                Table
               </button>
             </div>
           </div>
