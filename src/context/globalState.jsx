@@ -6,7 +6,7 @@ export const dataContext = createContext();
 const GlobalState = ({ children }) => {
   const [slideId, setSlideId] = useState();
   const [addNewSlide, setAddNewSlide] = useState([...MockSlide]);
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState([]);
   const [chart, setChart] = useState([]);
   const [showPreview, setShowPreview] = useState(false);
 

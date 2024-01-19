@@ -65,3 +65,8 @@ canvas{
 }
 
 
+
+.resizeable{
+  height:auto !important;
+  /* width:auto !important; */
+}

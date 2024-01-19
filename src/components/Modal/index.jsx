@@ -223,9 +223,7 @@ const StyledModal = ({ open, onClose }) => {
                     className="inline-flex items-center justify-between w-full p-5 text-gray-900 bg-white border border-gray-200 rounded-lg cursor-pointer  peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-900 hover:bg-gray-100 "
                   >
                     <div className="block">
-                      <div className="w-full text-lg font-semibold">
-                        Pie Chart
-                      </div>
+                      <div className="w-full text-lg font-semibold">Table</div>
                     </div>
                     <svg
                       className="w-4 h-4 ms-3 rtl:rotate-180 text-gray-500 "
@@ -249,7 +247,7 @@ const StyledModal = ({ open, onClose }) => {
                 onClick={addCharts}
                 className="text-white inline-flex w-full justify-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
               >
-                Table
+                Add Chart
               </button>
             </div>
           </div>

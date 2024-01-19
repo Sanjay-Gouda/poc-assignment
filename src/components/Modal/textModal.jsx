@@ -2,11 +2,11 @@
 // import { useContext, useEffect } from "react";
 // import { dataContext } from "../../context/globalState";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../context/globalState";
 
 const TextModal = ({ open, onClose }) => {
-  const { setComment } = useContext(dataContext);
+  const { setComment, comment } = useContext(dataContext);
   const [notes, setNotes] = useState("");
 
   const handleChange = (e) => {
@@ -15,10 +15,14 @@ const TextModal = ({ open, onClose }) => {
   };
 
   const addComment = () => {
-    setComment(notes);
-    // setNotes("");
+    setComment((comment) => [...comment, notes]);
+
     onClose();
   };
+
+  useEffect(() => {
+    console.log(comment, "all Comments");
+  }, [comment]);
 
   return (
     <>

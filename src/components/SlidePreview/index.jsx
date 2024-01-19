@@ -35,7 +35,7 @@ const SliderPreview = () => {
     selectedSlideName,
   } = useContext(dataContext);
 
-  console.log(chart);
+  console.log(comment);
   const randomId = useRandomID();
   const [slideDetail, setSlideDetail] = useState("");
   const [selectedSlide, setSelecteSlide] = useState([]);
@@ -110,7 +110,7 @@ const SliderPreview = () => {
     <>
       <div className="w-full shadow-md  px-6 py-1 fixed z-50 bg-white top-0 ">
         <div className="flex justify-between items-center">
-          <div className="flex  gap-2 ">
+          <div className="flex  gap-2 items-center ">
             <div className="w-14 h-14">
               <img src={Logo} className="w-full h-full object-cover" />
             </div>
@@ -153,70 +153,12 @@ const SliderPreview = () => {
               <div className=" p-2  bg-blue-500 text-white w-full">
                 <p className="font-semibold">Q3 ARP Gap update</p>
               </div>
-              {/* <div className="p-4 w-full flex flex-wrap">
-                {chart?.map((item, ind) => (
-                  <div key={ind} className="flex  gap-4 w-1/2">
-                    <div
-                      className={`overflow-hidden w-full  items-start justify-center flex`}
-                    >
-                      {item}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              {comment !== "" && (
-                <div className="w-auto h-12 p-3 rounded-lg shadow-md border-2 border-gray-200">
-                  <p>Note:{comment} </p>
-                </div>
-              )} */}
+
               <EditSlide
                 chart={chart}
                 comment={comment}
                 handleDrop={handleDrop}
               />
-              {/* <DragDropContext onDragEnd={handleDrop}>
-                <Droppable droppableId="ROOT" type="group">
-                  {(provided) => (
-                    <div className="w-full">
-                      <div
-                        {...provided.droppableProps}
-                        ref={provided.innerRef}
-                        className="p-4 w-full flex gap-4"
-                      >
-                        {chart.map((item, ind) => (
-                          <Draggable
-                            key={ind + "1"}
-                            draggableId={ind + "1"}
-                            index={ind}
-                          >
-                            {(provided) => (
-                              <div
-                                className="flex  w-1/2"
-                                {...provided.dragHandleProps}
-                                {...provided.draggableProps}
-                                ref={provided.innerRef}
-                              >
-                                <div
-                                  className={`overflow-hidden w-full   items-start justify-center flex`}
-                                >
-                                  {item}
-                                </div>
-                              </div>
-                            )}
-                          </Draggable>
-                        ))}
-                      </div>
-                      {comment !== "" && (
-                        <div className=" p-3   ">
-                          <p className="p-3 rounded-lg shadow-md border-2 border-gray-200">
-                            Note:{comment}{" "}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  )}
-                </Droppable>
-              </DragDropContext> */}
             </div>
           ) : (
             <div className="flex justify-start gap-5 flex-col items-start overflow-hidden w-[900px] h-[600px] bg-white rounded-lg shadow-md  border border-gray-500">

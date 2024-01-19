@@ -1,4 +1,5 @@
-const PreviewContainer = ({ item, notes, id }) => {
+/* eslint-disable react/prop-types */
+const PreviewContainer = ({ item, notes }) => {
   return (
     <>
       {/* <DragDropContext onDragEnd={handleDrop}> */}
@@ -13,17 +14,7 @@ const PreviewContainer = ({ item, notes, id }) => {
         <div className={`w-auto  p-3 rounded-lg  border-2 border-gray-200`}>
           <p>Note:{notes} </p>
         </div>
-        {/* <div className="w-full h-12 p-3 rounded-lg shadow-md">
-                    <Resizable
-                      defaultSize={{
-                        width: "100%",
-                      }}
-                    >
-                      <p>Note:{notes} </p>
-                    </Resizable>
-                  </div> */}
       </div>
-      {/* </DragDropContext> */}
     </>
   );
 };

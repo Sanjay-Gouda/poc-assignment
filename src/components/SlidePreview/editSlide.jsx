@@ -11,6 +11,8 @@ const EditSlide = ({ chart, comment, handleDrop }) => {
     setSize(size);
   };
 
+  console.log(comment, "inside EditSlide");
+
   return (
     <>
       <DragDropContext onDragEnd={handleDrop}>
@@ -20,7 +22,7 @@ const EditSlide = ({ chart, comment, handleDrop }) => {
               <div
                 {...provided.droppableProps}
                 ref={provided.innerRef}
-                className="p-4 w-full flex gap-4"
+                className="p-4 w-full flex gap-4 "
               >
                 {chart.map((item, ind) => (
                   <Draggable
@@ -46,22 +48,24 @@ const EditSlide = ({ chart, comment, handleDrop }) => {
                 ))}
               </div>
               {comment !== "" && (
-                // <div className=" p-3 w-auto  ">
-                //   <p className="p-3 rounded-lg shadow-md border-2 border-gray-200">
-                //     Note:{comment}{" "}
-                //   </p>
-                // </div>
-                <Resizable
-                  size={size}
-                  onResize={onResize}
-                  draggableOpts={{ enableUserSelectHack: false }}
-                >
-                  <div className="p-3 w-auto">
-                    <p className="p-3 rounded-lg shadow-md border-2 border-gray-200">
-                      Note: {comment}
-                    </p>
-                  </div>
-                </Resizable>
+                <div className="flex w-full gap-2 flex-wrap">
+                  {comment.map((note, ind) => (
+                    <Resizable
+                      className="resizeable"
+                      key={ind}
+                      size={size}
+                      onResize={onResize}
+                      style={{ height: "auto !important" }}
+                      draggableOpts={{ enableUserSelectHack: false }}
+                    >
+                      <div className="p-3 w-auto flex gap-4 flex-wrap">
+                        <p className="p-3 rounded-lg shadow-md border-2 border-gray-200">
+                          Note: {note}
+                        </p>
+                      </div>
+                    </Resizable>
+                  ))}
+                </div>
               )}
             </div>
           )}
